@@ -2,7 +2,6 @@ local Components = {
 	{label = _U('sex'),               		name = 'sex',          value = 0, min = 0, zoomOffset = 0.6, camOffset = 0.65}, --
 	{label = _U('face'),             		name = 'face',         value = 0, min = 0, zoomOffset = 0.6, camOffset = 0.65}, --
 	{label = _U('eyes'),             		name = 'eyes',         value = 0, min = 0, zoomOffset = 0.4, camOffset = 0.65}, --
-	{label = _U('nosew'),             		name = 'nosew',         value = -10, min = -10, zoomOffset = 0.4, camOffset = 0.65}, --
 	{label = _U('skin'),               		name = 'skin',         value = 0, min = 0, zoomOffset = 0.6, camOffset = 0.65}, --
 	{label = _U('wrinkles'),              		name = 'age_1',        value = 0, min = 0, zoomOffset = 0.4, camOffset = 0.65}, --
 	{label = _U('wrinkle_thickness'),    		name = 'age_2',        value = 0, min = 0, zoomOffset = 0.4, camOffset = 0.65}, --
@@ -228,7 +227,6 @@ function ApplySkin(skin, clothes)
 	SetPedComponentVariation(playerPed, 2, 		Character['hair_1'], Character['hair_2'], 2)	      				-- Hair
 	SetPedHairColor(playerPed, 					Character['hair_color_1'], Character['hair_color_2']) 		    	-- Hair Color
 	SetPedEyeColor(playerPed, 					Character['eyes']) 		    	-- Eye Color
-	SetPedFaceFeature(playerPed, 		0, (Character['nosew'] / 10) + 0.0)
 
 	if Character['ears_1'] == -1 then
 		ClearPedProp(playerPed,  2)
@@ -262,13 +260,13 @@ function ApplySkin(skin, clothes)
 	if Character['watches_1'] == 0 then
 		ClearPedProp(playerPed,  6)
 	else
-		SetPedPropIndex(playerPed, 6, Character['watches_1'], Character['watches_2'], 2)            					-- Glasses
+		SetPedPropIndex(playerPed, 6, Character['watches_1'], Character['watches_2'], 2)            					-- Watches
 	end
 
 	if Character['bracelets_1'] == 0 then
 		ClearPedProp(playerPed,  7)
 	else
-		SetPedPropIndex(playerPed, 7, Character['bracelets_1'], Character['bracelets_2'], 2)            					-- Glasses
+		SetPedPropIndex(playerPed, 7, Character['bracelets_1'], Character['bracelets_2'], 2)            					-- Bracelets
 	end
 
 end
